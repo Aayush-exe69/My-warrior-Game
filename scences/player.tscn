@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://br8oboiswp0lw"]
+
+[ext_resource type="Texture2D" uid="uid://bal3i4b1ighhv" path="res://assests/characters/sprites/AnimationSheet_Character.png" id="1_hqvp4"]
+
+[sub_resource type="GDScript" id="GDScript_hqvp4"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 130.0
+const JUMP_VELOCITY = -300.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j5lm"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efpdg"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4p4d"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7khn4"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xwe5"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0v3o"]
+atlas = ExtResource("1_hqvp4")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwok8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j5lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efpdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4p4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7khn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xwe5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0v3o")
+}],
+"loop": true,
+"name": &"idel",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_641ry"]
+radius = 6.3245554
+
+[node name="player" type="CharacterBody2D" unique_id=1426432458]
+script = SubResource("GDScript_hqvp4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635602206]
+position = Vector2(0, -19)
+sprite_frames = SubResource("SpriteFrames_mwok8")
+animation = &"idel"
+autoplay = "idel"
+frame_progress = 0.045709
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497913396]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_641ry")
