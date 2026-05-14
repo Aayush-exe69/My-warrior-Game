@@ -177,6 +177,8 @@ texture = ExtResource("1_jx3ei")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xfuu6")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yru2q"]
+
 [sub_resource type="Animation" id="Animation_xfuu6"]
 resource_name = "Move"
 length = 1.5
@@ -215,15 +217,13 @@ _data = {
 &"RESET": SubResource("Animation_cfxbr")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yru2q"]
-
 [node name="Game" type="Node2D" unique_id=134909640]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=190026026]
 position = Vector2(48, -5)
 tile_set = SubResource("TileSet_cfxbr")
 format = 2
-layer_0/tile_data = PackedInt32Array(262148, 0, 0, 262149, 0, 1, 393219, 0, 0, 393218, 0, 0, 393222, 393216, 0, 393223, 458752, 1, 393224, 393216, 0, 393232, 458752, 1, 393233, 393216, 0, 327684, 0, 1, 393220, 0, 1, 393221, 0, 1, 327685, 0, 1, 458756, 0, 1, 524292, 0, 1, 524291, 0, 1, 458755, 0, 1, 524290, 0, 1, 458757, 0, 1, 524293, 0, 1, 458754, 0, 1, 458758, 393216, 1, 524294, 393216, 1, 524295, 393216, 1, 524296, 393216, 1, 458760, 393216, 1, 458759, 524288, 1, 458764, 393216, 1, 458765, 524288, 1, 524301, 393216, 1, 524300, 393216, 1, 458768, 524288, 1, 524304, 393216, 1, 458769, 393216, 1, 524305, 393216, 1, -131064, 0, 0, 7, 0, 1, 8, 65536, 1, -65528, 0, 1, -65529, 0, 0, 9, 0, 0, 10, 0, 0, 65545, 0, 1, 65546, 0, 1, 13, 0, 0, 65549, 0, 1, -65522, 0, 0, 14, 0, 1, 65550, 0, 1, -65521, 0, 0, 15, 65536, 1, 65551, 0, 1, 16, 0, 0, 65552, 0, 1, 393225, 589824, 0, 393226, 655360, 0, 393227, 720896, 0, 11, 589824, 0, 12, 720896, 0, 393230, 589824, 0, 393231, 720896, 0, 65553, 262144, 0, 65554, 262144, 0, 65555, 262144, 0, 131089, 262144, 1, 131090, 262144, 1, 131091, 262144, 1, 196627, 262144, 1, 196628, 262144, 1, 262164, 262144, 1, 262165, 262144, 1, 131092, 327680, 1, 196629, 327680, 1, 196630, 262144, 0, 196631, 262144, 0, 262166, 262144, 1, 327702, 262144, 1, 393238, 262144, 1, 393239, 262144, 1, 327703, 262144, 1, 262167, 262144, 1, 458774, 262144, 1, 458775, 262144, 1, -196598, 0, 4, -131062, 0, 4, -65526, 0, 5, -262134, 0, 3, 18, 524288, 6, 131093, 524288, 6, -65517, 327680, 4, 19, 327680, 5, -131053, 327680, 4, -196589, 327680, 3, 327683, 65536, 0, 327682, 65536, 6, 327693, 0, 8, 327697, 0, 8, 393228, 393216, 0, 393229, 458752, 0, 458753, 65536, 0, 524289, 65536, 0, 393217, 0, 0, 458752, 0, 0, 589823, 0, 0, 524288, 0, 2, 524287, 524288, 3, 262176, 131072, 1, 327712, 131072, 1, 393248, 196608, 1, 458784, 131072, 1, 327713, 131072, 1, 393249, 131072, 1, 458785, 131072, 1, 196640, 131072, 2, 196641, 131072, 0, 262177, 196608, 1, 262178, 458752, 8, 327714, 196608, 1, 393250, 131072, 1, 458786, 131072, 1, 327715, 131072, 1, 393251, 131072, 1, 458787, 131072, 1)
+layer_0/tile_data = PackedInt32Array(262148, 0, 0, 262149, 0, 1, 393219, 0, 0, 393218, 0, 0, 393222, 393216, 0, 393223, 458752, 1, 393224, 393216, 0, 393232, 458752, 1, 393233, 393216, 0, 327684, 0, 1, 393220, 0, 1, 393221, 0, 1, 327685, 0, 1, 458756, 0, 1, 524292, 0, 1, 524291, 0, 1, 458755, 0, 1, 524290, 0, 1, 458757, 0, 1, 524293, 0, 1, 458754, 0, 1, 458758, 393216, 1, 524294, 393216, 1, 524295, 393216, 1, 524296, 393216, 1, 458760, 393216, 1, 458759, 524288, 1, 458764, 393216, 1, 458765, 524288, 1, 524301, 393216, 1, 524300, 393216, 1, 458768, 524288, 1, 524304, 393216, 1, 458769, 393216, 1, 524305, 393216, 1, -131064, 0, 0, 7, 0, 1, 8, 65536, 1, -65528, 0, 1, -65529, 0, 0, 9, 0, 0, 10, 0, 0, 65545, 0, 1, 65546, 0, 1, 13, 0, 0, 65549, 0, 1, -65522, 0, 0, 14, 0, 1, 65550, 0, 1, -65521, 0, 0, 15, 65536, 1, 65551, 0, 1, 16, 0, 0, 65552, 0, 1, 393225, 589824, 0, 393226, 655360, 0, 393227, 720896, 0, 11, 589824, 0, 12, 720896, 0, 393230, 589824, 0, 393231, 720896, 0, -196598, 0, 4, -131062, 0, 4, -65526, 0, 5, -262134, 0, 3, 327683, 65536, 0, 327682, 65536, 6, 327693, 0, 8, 327697, 0, 8, 393228, 393216, 0, 393229, 458752, 0, 458753, 65536, 0, 524289, 65536, 0, 393217, 0, 0, 458752, 0, 0, 589823, 0, 0, 524288, 0, 2, 524287, 524288, 3, 18, 0, 0, -65516, 0, 0, -65517, 0, 0, 21, 0, 0, 65558, 0, 0, 131095, 0, 0, -131052, 0, 7, 19, 0, 1, 20, 0, 1, 65556, 0, 1, 65557, 0, 1, 131093, 65536, 1, 131094, 0, 1, 196630, 0, 1, 131092, 0, 1, 131091, 0, 1, 65554, 0, 1, 196626, 0, 1, 196627, 0, 1, 196628, 0, 1, 196629, 0, 1, 131090, 65536, 1, 65555, 65536, 1, 524321, 393216, 3, 589857, 393216, 4, 262178, 0, 1, 327714, 0, 1, 393250, 0, 1, 131107, 65536, 6, 196643, 0, 0, 262179, 65536, 1, 327715, 0, 1, 65572, 0, 4, 131108, 0, 5, 196644, 0, 0, 262180, 0, 1, 327716, 0, 1, 131109, 524288, 8, 196645, 0, 0, 262181, 0, 1, 327717, 0, 1, 131110, 0, 0, 196646, 0, 1, 262182, 0, 1, 131111, 589824, 2, 131112, 655360, 2, 131113, 720896, 2, 131114, 589824, 2, 131115, 720896, 0, 131116, 262144, 0, 131117, 262144, 0, 131118, 262144, 0, 196654, 262144, 1, 196655, 327680, 1, 196656, 524288, 6, 262192, 327680, 1, 262193, 262144, 0, 327729, 262144, 1, 262194, 262144, 0, 327730, 262144, 1, 524319, 393216, 3, 589855, 393216, 4, 262176, 0, 0, 327712, 196608, 7, 393248, 196608, 7, 458784, 393216, 4, 524320, 393216, 4, 589856, 393216, 4, 131105, 0, 0, 196641, 0, 0, 262177, 0, 1, 327713, 0, 1, 65570, 0, 0, 131106, 0, 1, 196642, 65536, 1, -65500, 0, 3, 36, 0, 4, 196652, 262144, 1, 65581, 524288, 6, 196653, 327680, 1, -131026, 327680, 3, -65490, 327680, 4, 46, 327680, 4, 65582, 327680, 5, 262190, 262144, 1, 262191, 262144, 1, 327727, 262144, 1, 327728, 262144, 1, 393265, 262144, 1, 458801, 327680, 1, 393266, 327680, 1, 458802, 262144, 1)
 
 [node name="player" parent="." unique_id=1426432458 instance=ExtResource("1_lbs7c")]
 position = Vector2(122, 63)
@@ -238,43 +238,42 @@ position_smoothing_enabled = true
 [node name="Platform" parent="." unique_id=88480728 instance=ExtResource("3_xfuu6")]
 position = Vector2(120, 19)
 
-[node name="Platform2" parent="." unique_id=692169029 instance=ExtResource("3_xfuu6")]
+[node name="Kill Zone2" parent="." unique_id=1256215817 instance=ExtResource("5_b174u")]
+position = Vector2(138, 161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone2" unique_id=702154967]
+position = Vector2(0, 7)
+shape = SubResource("WorldBoundaryShape2D_yru2q")
+
+[node name="coin" type="Node" parent="." unique_id=524276704]
+
+[node name="Platform2" parent="coin" unique_id=692169029 instance=ExtResource("3_xfuu6")]
 position = Vector2(450, 47)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2" unique_id=217447391]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coin/Platform2" unique_id=217447391]
 libraries/ = SubResource("AnimationLibrary_b174u")
 autoplay = &"Move"
 
-[node name="Coin10" parent="Platform2" unique_id=592519970 instance=ExtResource("4_cfxbr")]
-position = Vector2(1, -16)
+[node name="Coin10" parent="coin/Platform2" unique_id=592519970 instance=ExtResource("4_cfxbr")]
+position = Vector2(2, -13)
 
-[node name="Coin" parent="." unique_id=1406545334 instance=ExtResource("4_cfxbr")]
+[node name="Coin" parent="coin" unique_id=1406545334 instance=ExtResource("4_cfxbr")]
 position = Vector2(167, 82)
 
-[node name="Coin2" parent="." unique_id=1231826787 instance=ExtResource("4_cfxbr")]
-position = Vector2(54, 102)
-
-[node name="Coin4" parent="." unique_id=1449299394 instance=ExtResource("4_cfxbr")]
-position = Vector2(311, 85)
-
-[node name="Coin5" parent="." unique_id=167219662 instance=ExtResource("4_cfxbr")]
-position = Vector2(122, 3)
-
-[node name="Coin6" parent="." unique_id=1177079951 instance=ExtResource("4_cfxbr")]
-position = Vector2(185, -51)
-
-[node name="Coin7" parent="." unique_id=749650878 instance=ExtResource("4_cfxbr")]
-position = Vector2(294, -28)
-
-[node name="Coin9" parent="." unique_id=1791559164 instance=ExtResource("4_cfxbr")]
-position = Vector2(613, 64)
-
-[node name="Coin8" parent="." unique_id=1572322711 instance=ExtResource("4_cfxbr")]
+[node name="Coin8" parent="coin" unique_id=1572322711 instance=ExtResource("4_cfxbr")]
 position = Vector2(278, -27)
 
-[node name="Kill Zone" parent="." unique_id=1256215817 instance=ExtResource("5_b174u")]
-position = Vector2(138, 161)
+[node name="Coin7" parent="coin" unique_id=749650878 instance=ExtResource("4_cfxbr")]
+position = Vector2(294, -28)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=702154967]
-position = Vector2(0, 7)
-shape = SubResource("WorldBoundaryShape2D_yru2q")
+[node name="Coin6" parent="coin" unique_id=1177079951 instance=ExtResource("4_cfxbr")]
+position = Vector2(185, -51)
+
+[node name="Coin5" parent="coin" unique_id=167219662 instance=ExtResource("4_cfxbr")]
+position = Vector2(118, 7)
+
+[node name="Coin2" parent="coin" unique_id=1231826787 instance=ExtResource("4_cfxbr")]
+position = Vector2(54, 102)
+
+[node name="Coin4" parent="coin" unique_id=1449299394 instance=ExtResource("4_cfxbr")]
+position = Vector2(311, 85)
