@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dg2ccamgt7xyk"]
+
+[ext_resource type="AudioStream" uid="uid://gy8oss2m03de" path="res://assests/characters/music/one_piece.mp3" id="1_svsc2"]
+
+[node name="onepiece" type="AudioStreamPlayer2D" unique_id=764891588]
+stream = ExtResource("1_svsc2")
+autoplay = true
