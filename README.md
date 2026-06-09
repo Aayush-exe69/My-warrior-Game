@@ -3,6 +3,11 @@
 Assassin Hunter is a simple 2D action platformer made with Godot. 
 This is my beginner game project where the player explores the map, avoids dangers, collects coins, and tries to survive.
 
+## Screenshots
+
+### Main Menu
+
+
 ## Features
 - 2D platformer movement
 - Jump and run mechanics
