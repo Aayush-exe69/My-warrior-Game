@@ -6,7 +6,12 @@ This is my beginner game project where the player explores the map, avoids dange
 ## Screenshots
 
 ### Main Menu
+<img src="img.png">
 
+<img src="img1.png">
+<img src="img2.png">
+<img src="img3.png">
+<img src="img4.png">
 
 ## Features
 - 2D platformer movement
