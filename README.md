@@ -8,9 +8,16 @@ This is my beginner game project where the player explores the map, avoids dange
 ### Main Menu
 <img src="img.png">
 
+### Aware
 <img src="img1.png">
+
+### Scence
 <img src="img2.png">
+
+### Command
 <img src="img3.png">
+
+### Motivate
 <img src="img4.png">
 
 ## Features
